@@ -1,0 +1,28 @@
+.main{
+	&-banner{
+		position: relative;
+		img{
+			width: 100%;
+		}
+		&-text{
+			position: absolute;
+			right: 0;
+			top: 0;
+			background-color: rgba($primaryColor, 0.8);
+			clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+			width: 52%;
+			height: 100%;
+			@include media-breakpoint-down($grid-breakpoints-xs){
+				display: none;
+			}
+			h2{
+				color: $white;
+			}
+		}
+	}
+}
+.blurb-quote{
+	.icons-quote-left{
+		@include position(absolute, $left:-5px, $top:10px)
+	}
+}

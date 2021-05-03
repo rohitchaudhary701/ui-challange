@@ -1,0 +1,87 @@
+@mixin media-breakpoint($width) {
+	@media (min-width: $width) {
+		@content;
+	}
+}
+@mixin media-breakpoint-down($width) {
+	@media (max-width: $width) {
+		@content;
+	}
+}
+@mixin position($pos, $top: null, $right: null, $bottom: null, $left: null, $zi: null) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $zi;
+}
+/*
+$bd = Boder Direcion (top, left, right, bottom, all)
+$bw = Border Width
+$bt = Border Type (Solid, dashed, dotted)
+$bcolor = Border Color
+*/
+@mixin border($bd, $bw, $bt, $bcolor) {
+  @if($bd == top){
+    border-top: $bw $bt $bcolor;
+  }
+  @else if($bd == right){
+    border-right: $bw $bt $bcolor;
+  }
+  @else if($bd == bottom){
+    border-bottom: $bw $bt $bcolor;
+  }
+  @else if($bd == left){
+    border-left: $bw $bt $bcolor;
+  }
+  @else if($bd == all) {
+    border: $bw $bt $bcolor;
+  }
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+@each $breakName, $breakValue in $breakpoints {
+  @each $sideName, $sideValue in $sides {
+    @for $i from 0 through 100 {
+      
+      $property: if($sideName == '', '', -#{$sideValue});
+      $space: $i;
+      $selector: '';
+
+      @if $breakName != "" {
+        $selector: #{$sideName}-#{$breakName}-#{$i};
+      } @else {
+        $selector: #{$sideName}-#{$i};
+      }
+
+      @if $breakName != "" {
+        @media (min-width: $breakValue) {
+          .m#{$selector} {
+            margin#{$property}: #{$space}px;
+          }
+  
+          .p#{$selector} {
+            padding#{$property}: #{$space}px;
+          }
+        }
+      } @else {
+        .m#{$selector} {
+          margin#{$property}: #{$space}px;
+        }
+
+        .p#{$selector} {
+          padding#{$property}: #{$space}px;
+        }
+      }
+    }
+  }
+}

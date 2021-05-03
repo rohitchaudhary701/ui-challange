@@ -1,0 +1,37 @@
+/*------Colors-----*/
+$primaryColor: #00945f;
+$secondaryColor: #e97300;
+$secondaryColorDark: #ce6601;
+$text-light-gray: #888888;
+$white: #fff;
+$black: #000;
+$linkColor: #759b24;
+$darkGray: #444;
+/*------Breakpoints-------*/
+$grid-breakpoints-md: 1300px;
+$grid-breakpoints-sm: 1024px;
+$grid-breakpoints-xs: 768px;
+
+/*----- Margin and Padding Generator -----------*/
+$sides: (
+"": "",
+"t": "top",
+"b": "bottom",
+"l": "left",
+"r": "right",
+);
+
+$breakpoints: (
+"": "",
+"sm": 768px,
+"md": 1024px,
+"lg": 1300px,
+);
+
+
+/*--------------*/
+$gutter: 0.75rem;
+$lineHeight: 1.75;
+$containerWidth-md: 1280px;
+$containerWidth-sm: 960px;
+$containerWidth-xs: 720px;

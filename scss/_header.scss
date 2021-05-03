@@ -1,0 +1,15 @@
+header{
+	.main-logo{
+		@include flexbox();
+		justify-content: center;
+		img{
+			max-width: 260px;
+		}
+		@include media-breakpoint($grid-breakpoints-xs) { 
+			justify-content: left;
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+}

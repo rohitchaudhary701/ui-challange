@@ -1,0 +1,74 @@
+
+body{
+	line-height: $lineHeight;
+}
+
+/* ---Container -------*/
+.container{
+	width: 100%;
+	padding-right: $gutter;
+	padding-left: $gutter;
+	margin-right: auto;
+	margin-left: auto;
+}
+@include media-breakpoint($grid-breakpoints-xs) { 
+	.container{
+		max-width: $containerWidth-xs;
+	}
+}
+@include media-breakpoint($grid-breakpoints-sm) { 
+	.container{
+		max-width: $containerWidth-sm;
+	}
+}
+@include media-breakpoint($grid-breakpoints-md) { 
+	.container{
+		max-width: $containerWidth-md;
+	}
+}
+
+
+/* ---Positions -------*/
+.position-relative{
+	@include position(relative)
+}
+.position-absolute{
+	@include position(absolute)
+}
+
+/* ---Buttons -------*/
+.btn{
+	padding: 8px 17px;
+	transition: background-color 0.5s;
+	&:hover{
+		background-color: $secondaryColorDark;
+	}
+}
+
+/* ---Backgrounds -------*/
+.bg-secondary{
+	background-color: $secondaryColor;
+}
+.bg-primary{
+	background-color: $primaryColor;
+}
+.bg-primary-light{
+	background-color: rgba($primaryColor, 0.1);
+}
+
+/* ---Borders -------*/
+@include media-breakpoint($grid-breakpoints-xs) { 
+	.border-right-gray{
+		@include border(right, 1px, solid, #bbb)
+	}
+}
+@include media-breakpoint-down($grid-breakpoints-xs - 1){
+	.border-bottom-gray{
+		@include border(bottom, 1px, solid, #bbb)
+	}
+}
+
+.border-top-primary{
+	@include border(top, 1px, solid, $primaryColor)
+}
+

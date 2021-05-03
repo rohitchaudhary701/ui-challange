@@ -1,0 +1,61 @@
+.font-bold{
+	font-weight: bold;
+}
+.text-center{
+	text-align: center;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.text-lg{
+	font-size: 2.5rem;
+}
+.text-md{
+	font-size: 1.625rem;
+}
+.text-sm{
+	font-size: 1.25rem;
+}
+.text-xs{
+	font-size: .65rem;
+}
+.font-italic{
+	font-style: italic;
+}
+.text-underline{
+	&::after{
+		content: "";
+		width: 90px;
+		height: 2px;
+		margin: auto;
+		@include position(absolute, $bottom:0, $right:0, $left:0);
+		background-color: $primaryColor;
+	}
+}
+
+
+/* --- Text color ----- */
+.color-white{
+	color: $white;
+}
+.color-black{
+	color: $black;
+}
+.color-primary{
+	color: $primaryColor;
+}
+.color-gray{
+	color: $text-light-gray;
+}
+.color-link{
+	color: $linkColor;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+.color-dark{
+	color: $darkGray;
+}

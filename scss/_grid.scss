@@ -1,0 +1,48 @@
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -($gutter);
+	margin-left: -($gutter);
+}
+
+%defaults { 
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+
+@each $breakName, $breakValue in $breakpoints {
+  @each $sideName, $sideValue in $sides {
+    @for $i from 0 through 12 {
+      .col-#{$i} {
+				@extend %defaults;
+			}
+      $space: 100% / 12 * $i;   ;
+      $selector: '';
+
+      @if $breakName != "" {
+        $selector: #{$sideName}-#{$breakName}-#{$i};
+      } @else {
+        $selector: #{$sideName}-#{$i};
+      }
+
+      @if $breakName != "" {
+        @media (min-width: $breakValue) {
+          .col#{$selector} {
+						flex: 0 0 #{$space};
+						max-width: #{$space};
+          }
+        }
+      } @else {
+        .col#{$selector} {
+          flex: 0 0 #{$space};
+					max-width: #{$space};
+        }
+      }
+    }
+  }
+}

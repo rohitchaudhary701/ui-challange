@@ -1,0 +1,28 @@
+.social-links{
+	display: flex;
+	a{
+		margin-right: 10px;
+	}
+}
+footer{
+	p{
+		line-height: 1.5;
+		a{
+			text-decoration: underline;
+		}
+	}
+}
+.footer-links{
+	display: flex;
+	a{
+		line-height: 1.2;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	a:not(:last-child){
+		padding-right: 5px;
+		margin-right: 5px;
+		border-right: 1px solid $black;
+	}
+}
